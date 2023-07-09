@@ -12,21 +12,19 @@ export default function Nav() {
     const [toggleDropdown, setToggleDropdown] =useState(false)
 
     useEffect(() => {
-        const setProviders = async () => {
+        const setUpProviders = async () => {
             const response = await getProviders()
             setProviders(response)
         }
-        setProviders()
+        setUpProviders()
     },[])
 
     return (
         <nav className='flex-between w-full mb-16 pt-3'>
             <Link href="/" className='flex gap-2 flex-center'>
-                <Image src="/assets/images/logo.svg" alt='Promptopia Logo' width={30} height={30} clas
-                object-contain/>
+                <Image src="/assets/images/logo.svg" alt='Promptopia Logo' width={30} height={30} className='object-contain'/>
                 <p className='logo_text'>Promptopia</p>
             </Link>
-
 
             {/* Desktop Navigation */}
             <div className='sm:flex hidden'>
@@ -41,7 +39,7 @@ export default function Nav() {
                         </button>
                         
                         <Link href='/profile'>
-                            <Image src='/assets/images/logo.svg' width={37} height={37} className='rounded-full' alt='profile'/>
+                            <Image src={session?.user.image} width={37} height={37} className='rounded-full' alt='profile'/>
                         </Link>
                     </div>
                 ) : (
@@ -59,7 +57,7 @@ export default function Nav() {
             <div className='sm:hidden flex relative'>
                 {session?.user ? (
                     <div className='flex'>
-                        <Image src='/assets/images/logo.svg' onClick={()=>setToggleDropdown(prev => !prev)} width={37} height={37} className='rounded-full' alt='profile'/>
+                        <Image src={session?.user.image} onClick={()=>setToggleDropdown(prev => !prev)} width={37} height={37} className='rounded-full' alt='profile'/>
                     
                     {toggleDropdown && (
                         <div className='dropdown'>

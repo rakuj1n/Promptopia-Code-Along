@@ -1,5 +1,5 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-Code-Along to: https://www.youtube.com/watch?v=wm5gMKuwSYk 
+Code-Along to: https://www.youtube.com/watch?v=wm5gMKuwSYk.
 
 ## Getting Started
 
